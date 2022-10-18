@@ -23,6 +23,6 @@ resetBTN.addEventListener('click', onReset);
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, elem) => acc + Number(elem), 0);
-  const historyString = state.history.reduce((acc, elem) => acc + elem, 0);
+  const historyString = state.history.join('');
   counter.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
 });
