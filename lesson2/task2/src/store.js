@@ -39,6 +39,4 @@ const counterReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(counterReducer);
-
-export default store;
+export const store = createStore(counterReducer);
