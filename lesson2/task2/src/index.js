@@ -1,10 +1,10 @@
-import store, { increment, decrement, reset } from './store';
 import './index.scss';
+import store, { increment, decrement, reset } from './store';
 
 const counter = document.querySelector('.counter__result');
-const incBtn = document.querySelector('[data-action="increment"]');
-const decBtn = document.querySelector('[data-action="decrement"]');
-const resetBtn = document.querySelector('[data-action="reset"]');
+const incrementButton = document.querySelector('[data-action="increment"]');
+const decrementButton = document.querySelector('[data-action="decrement"]');
+const resetButton = document.querySelector('[data-action="reset"]');
 
 const onIncrement = () => {
   store.dispatch(increment());
@@ -16,9 +16,9 @@ const onReset = () => {
   store.dispatch(reset());
 };
 
-incBtn.addEventListener('click', onIncrement);
-decBtn.addEventListener('click', onDecrement);
-resetBtn.addEventListener('click', onReset);
+incrementButton.addEventListener('click', onIncrement);
+decrementButton.addEventListener('click', onDecrement);
+resetButton.addEventListener('click', onReset);
 
 store.subscribe(() => {
   const state = store.getState();
