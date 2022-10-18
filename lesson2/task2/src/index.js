@@ -1,7 +1,7 @@
 import './index.scss';
-import store, { increment, decrement, reset } from './store';
+import store, { increment, decrement, reset } from './store.js';
 
-const counter = document.querySelector('.counter__result');
+const resultElement = document.querySelector('.counter__result');
 const incrementButton = document.querySelector('[data-action="increment"]');
 const decrementButton = document.querySelector('[data-action="decrement"]');
 const resetButton = document.querySelector('[data-action="reset"]');
@@ -22,7 +22,8 @@ resetButton.addEventListener('click', onReset);
 
 store.subscribe(() => {
   const state = store.getState();
-  const currentValue = state.history.reduce((acc, elem) => acc + Number(elem), 0);
+  const currentValue = state.history.reduce((acc, value) => acc + Number(value), 0);
   const historyString = state.history.join('');
-  counter.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
+  resultElement.textContent =
+    state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
 });
