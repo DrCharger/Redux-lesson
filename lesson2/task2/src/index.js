@@ -1,4 +1,3 @@
-import './index.scss';
 import store, { increment, decrement, reset } from './store';
 
 const resultElem = document.querySelector('.counter__result');
