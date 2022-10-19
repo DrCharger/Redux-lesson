@@ -9,7 +9,6 @@ export const increment = () => {
     type: INCREMENT,
   };
 };
-
 export const decrement = () => {
   return {
     type: DECREMENT,
@@ -25,14 +24,13 @@ const initialState = {
   history: [],
 };
 
-const counterReducer = (state = initialState, action) => {
+const counterReduser = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
         ...state,
         history: state.history.concat('+1'),
       };
-
     case DECREMENT:
       return {
         ...state,
@@ -48,6 +46,6 @@ const counterReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(counterReducer);
+const store = createStore(counterReduser);
 
 export default store;
