@@ -1,4 +1,4 @@
-import { ADD_USER, DELETE_USER } from './users.actions';
+import { ADD_USER, DELETE_USER } from './user.actions';
 
 const userReducer = (state = null, action) => {
   switch (action.type) {
