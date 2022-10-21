@@ -4,13 +4,13 @@ import Pagination from './Pagination';
 import User from './User';
 import * as counterActions from '../counter/counter.actions';
 
-const UsersList = ({ users, next, prev, currentPage }) => {
+const UsersList = ({ users, goNext, goPrev, currentPage }) => {
   const perPage = 3;
   return (
     <div>
       <Pagination
-        goNext={next}
-        goPrev={prev}
+        goNext={goNext}
+        goPrev={goPrev}
         currentPage={currentPage}
         totalItems={users.length}
         itemsPerPage={perPage}
@@ -35,8 +35,8 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  prev: counterActions.decrement,
-  next: counterActions.increment,
+  goPrev: counterActions.decrement,
+  goNext: counterActions.increment,
 };
 
 export default connect(mapState, mapDispatch)(UsersList);
