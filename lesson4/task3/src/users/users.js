@@ -54,9 +54,4 @@ export const users = [
     age: 45,
     name: 'Anna',
   },
-  {
-    id: 'id-11',
-    age: 44,
-    name: 'Anna',
-  },
 ];
