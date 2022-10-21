@@ -1,7 +1,5 @@
 import { users } from '../users/users';
 
-const usersReducer = (state = users) => {
-  return state;
-};
+const usersReducer = (state = users) => state;
 
 export default usersReducer;
