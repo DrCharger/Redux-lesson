@@ -1,10 +1,7 @@
 import { users } from '../users/users';
 
-const usersReducer = (state = users, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
+const usersReducer = (state = users) => {
+  return state;
 };
 
 export default usersReducer;
