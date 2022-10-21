@@ -5,7 +5,6 @@ import User from './User';
 import * as counterActions from '../counter/counter.actions';
 
 const UsersList = ({ users, next, prev, currentPage }) => {
-  const perPage = 3;
   return (
     <div>
       <Pagination
@@ -13,12 +12,12 @@ const UsersList = ({ users, next, prev, currentPage }) => {
         goPrev={prev}
         currentPage={currentPage}
         totalItems={users.length}
-        itemsPerPage={perPage}
+        itemsPerPage={3}
       />
       <ul className="users">
         {users
           .sort((a, b) => a.age - b.age)
-          .slice(currentPage * perPage, currentPage * perPage + perPage)
+          .slice(currentPage * 3, currentPage * 3 + 3)
           .map(user => (
             <User key={user.id} name={user.name} age={user.age} />
           ))}
