@@ -17,7 +17,6 @@ const UsersList = ({ users, goNext, goPrev, currentPage }) => {
       />
       <ul className="users">
         {users
-          .sort((a, b) => a.age - b.age)
           .slice(currentPage * perPage, currentPage * perPage + perPage)
           .map(user => (
             <User key={user.id} name={user.name} age={user.age} />
