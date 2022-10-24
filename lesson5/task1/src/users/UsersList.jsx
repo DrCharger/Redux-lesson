@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Pagination from './Pagination';
 import User from './User';
 import * as counterActions from '../counter/counter.actions';
-import { usersListSelector, currentPageSelector } from './users.selected';
 
 const UsersList = ({ users, goNext, goPrev, currentPage }) => {
   const perPage = 3;
@@ -17,9 +16,11 @@ const UsersList = ({ users, goNext, goPrev, currentPage }) => {
         itemsPerPage={perPage}
       />
       <ul className="users">
-        {users.slice(currentPage * perPage, currentPage * perPage + perPage).map(user => (
-          <User key={user.id} name={user.name} age={user.age} />
-        ))}
+        {users
+          .slice(currentPage * perPage, currentPage * perPage + perPage)
+          .map(user => (
+            <User key={user.id} name={user.name} age={user.age} />
+          ))}
       </ul>
     </div>
   );
@@ -27,8 +28,8 @@ const UsersList = ({ users, goNext, goPrev, currentPage }) => {
 
 const mapState = state => {
   return {
-    users: usersListSelector(state),
-    currentPage: currentPageSelector(state),
+    users: state.users.usersList,
+    currentPage: state.currentPage,
   };
 };
 
