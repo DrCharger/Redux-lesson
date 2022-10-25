@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import City from './City';
-import { fetchUserData } from './weather.actions';
+import { getWeatherData } from './weather.actions';
 import { citiesSelector } from './weather.selectors';
 
 class Weather extends Component {
   componentDidMount() {
-    this.props.fetchUserData();
+    this.props.getWeatherData();
   }
   render() {
     return (
@@ -28,7 +28,7 @@ const setState = state => {
   };
 };
 const mapDispatch = {
-  fetchUserData: fetchUserData,
+  getWeatherData: getWeatherData,
 };
 
 export default connect(setState, mapDispatch)(Weather);
