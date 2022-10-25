@@ -1,6 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import counterReducer from './counter/counter.reducers';
-import thunk from 'redux-thunk';
 
 const appReducer = combineReducers({
   counter: counterReducer,
