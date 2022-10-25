@@ -1,13 +1,13 @@
-import { createStore, combineReducers } from 'redux';
-import usersReducer from './users/users.reducer';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import weatherReducer from './weather/weather.reducer';
 
 const appReducer = combineReducers({
-  users: usersReducer,
+  cities: weatherReducer,
 });
 
-const store = createStore(
-  appReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__ || compose;
+
+const store = createStore(appReducer, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;

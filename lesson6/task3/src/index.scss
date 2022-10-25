@@ -1,5 +1,3 @@
-// index.scss
-
 * {
   box-sizing: border-box;
 }
@@ -9,54 +7,34 @@ body {
 }
 
 #root {
-  height: 100vh;
   display: flex;
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.users {
+.weather {
+  width: 100%;
+  max-width: 300px;
+
+  &__title {
+    word-spacing: 16px;
+    font-weight: 300;
+  }
+}
+
+.cities-list {
   list-style-type: none;
+  margin: 0;
   padding: 0;
 }
 
-.user {
-  margin: 8px;
+.city {
   display: flex;
+  line-height: 32px;
 
-  &__age {
-    font-weight: 700;
-    opacity: 0.5;
+  &__temperature {
     margin-left: auto;
-  }
-}
-
-.filter {
-  display: flex;
-  height: 32px;
-
-  &__input {
-    flex: 1;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border: 3px solid #ff7f50;
-    border-left: none;
-    padding: 8px;
-    font-size: 24px;
-    outline: none;
-  }
-
-  &__count {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border: 3px solid #ff7f50;
-    border-right: none;
-    width: 40px;
-    line-height: 28px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    background: #ff7f50;
-    color: #fff;
   }
 }
