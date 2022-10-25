@@ -10,7 +10,6 @@ const UserInfo = ({ userData, isFetching }) => {
   if (!userData) {
     return null;
   }
-  console.log(userData);
 
   return (
     <div className="user">
