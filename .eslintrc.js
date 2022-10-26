@@ -9,7 +9,7 @@ module.exports = {
     strict: 0,
     'no-alert': 0,
     'no-console': 0,
-    'no-constant-condition': 0,
+    'no-constant-condition': 1,
     'no-shadow': 0,
     'no-restricted-globals': 0,
     'no-unused-vars': 0,
